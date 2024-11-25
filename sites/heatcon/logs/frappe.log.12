@@ -1,0 +1,911 @@
+2024-11-18 11:38:20,360 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {}
+2024-11-18 11:38:20,767 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {}
+2024-11-18 12:14:11,265 ERROR frappe Could not take error snapshot: (1146, "Table '_f2105caccdc715ce.tabSingles' doesn't exist")
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 195, in init_request
+    frappe.local.http_request = HTTPRequest()
+                                ^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 44, in __init__
+    self.set_session()
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 78, in set_session
+    frappe.local.login_manager = LoginManager()
+                                 ^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 120, in __init__
+    self.make_session(resume=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 213, in make_session
+    frappe.local.session_obj = Session(
+                               ^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 221, in __init__
+    self.resume()
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 292, in resume
+    data = self.get_session_record()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in get_session_record
+    r = self.get_session_data()
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 327, in get_session_data
+    data = self.get_session_data_from_db()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 356, in get_session_data_from_db
+    ).run()
+      ^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabSessions' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabDocType' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+             ^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 643, in get_values
+    out = self.get_values_from_single(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 680, in get_values_from_single
+    values = self.get_singles_dict(doctype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
+    ).run(debug=debug)
+      ^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabSingles' doesn't exist")
+2024-11-18 12:19:32,305 ERROR frappe Could not take error snapshot: (1146, "Table '_f2105caccdc715ce.tabSingles' doesn't exist")
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 195, in init_request
+    frappe.local.http_request = HTTPRequest()
+                                ^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 44, in __init__
+    self.set_session()
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 78, in set_session
+    frappe.local.login_manager = LoginManager()
+                                 ^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 120, in __init__
+    self.make_session(resume=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/auth.py", line 213, in make_session
+    frappe.local.session_obj = Session(
+                               ^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 221, in __init__
+    self.resume()
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 292, in resume
+    data = self.get_session_record()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in get_session_record
+    r = self.get_session_data()
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 327, in get_session_data
+    data = self.get_session_data_from_db()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/sessions.py", line 356, in get_session_data_from_db
+    ).run()
+      ^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabSessions' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabDocType' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+             ^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 643, in get_values
+    out = self.get_values_from_single(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 680, in get_values_from_single
+    values = self.get_singles_dict(doctype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
+    ).run(debug=debug)
+      ^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/database/database.py", line 229, in sql
+    self._cursor.execute(query, values)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ts/frappe_heatcon/frappe-bench/env/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_f2105caccdc715ce.tabSingles' doesn't exist")
+2024-11-18 12:56:00,749 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:01,440 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:01,903 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:21,386 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:23,609 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:24,153 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:24,363 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:24,985 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:25,536 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:26,045 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:26,352 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:26,563 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:26,778 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:26,962 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:27,142 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 12:56:27,330 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'app_path': 'home'}
+2024-11-18 13:18:16,976 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:18:17,905 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:18:18,202 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:18:18,432 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:21:59,148 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:22:00,035 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:22:00,300 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:22:00,534 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-18 13:22:00,753 ERROR frappe Could not take error snapshot: 'NoneType' object has no attribute 'get'
+Site: heatcon
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 313, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1705, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1553, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1518, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1548, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1489, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'hrms'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 248, in load_doctype_module
+    app = get_module_app(module)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ts/frappe_heatcon/frappe-bench/apps/frappe/frappe/modules/utils.py", line 271, in get_module_app
+    app = frappe.local.module_app.get(scrub(module))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2024-11-20 11:43:35,311 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'docs': '{"name":"1cfb5188ab","owner":"sub.admin@techsolvo.com","creation":"2024-10-25 14:48:21.895356","modified":"2024-10-25 14:48:21.895356","modified_by":"sub.admin@techsolvo.com","docstatus":0,"idx":0,"file_name":"400x400 logo with white bg 100000.png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":24666,"file_url":"/files/400x400 logo with white bg 100000.png","folder":"Home","is_folder":0,"attached_to_doctype":"Website Settings","attached_to_name":"Website Settings","attached_to_field":"favicon","content_hash":"da7d7c999ca6d54b4bbe3490208cdfda","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-20T06:13:17.195Z"}', 'method': 'optimize_file', 'cmd': 'run_doc_method'}
+2024-11-20 11:52:39,912 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'doc': '{"name":"e30bb3d8aa","owner":"sub.admin@techsolvo.com","creation":"2024-11-20 11:51:48.934663","modified":"2024-11-20 11:51:48.934663","modified_by":"sub.admin@techsolvo.com","docstatus":0,"idx":0,"file_name":"400x400 logo with white bg 100000.png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":4260,"file_url":"/private/files/400x400 logo with white bg 100000.png","folder":"Home","is_folder":0,"attached_to_doctype":"Navbar Settings","attached_to_name":"Navbar Settings","attached_to_field":"app_logo","content_hash":"7ef08499d0407a553a0cc275ec77b63d","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-20T06:22:37.088Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 11:52:52,378 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'doc': '{"name":"e30bb3d8aa","owner":"sub.admin@techsolvo.com","creation":"2024-11-20 11:51:48.934663","modified":"2024-11-20 11:51:48.934663","modified_by":"sub.admin@techsolvo.com","docstatus":0,"idx":0,"file_name":"400x400 logo with white bg 100000.png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":4260,"file_url":"/private/files/400x400 logo with white bg 100000.png","folder":"Home","is_folder":0,"attached_to_doctype":"Navbar Settings","attached_to_name":"Navbar Settings","attached_to_field":"app_logo","content_hash":"7ef08499d0407a553a0cc275ec77b63d","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-20T06:22:37.088Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 11:53:10,544 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'doc': '{"name":"e30bb3d8aa","owner":"sub.admin@techsolvo.com","creation":"2024-11-20 11:51:48.934663","modified":"2024-11-20 11:51:48.934663","modified_by":"sub.admin@techsolvo.com","docstatus":0,"idx":0,"file_name":"400x400 logo with white bg 100000.png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":4260,"file_url":"/private/files/400x400 logo with white bg 100000.png","folder":"Home","is_folder":0,"attached_to_doctype":"Navbar Settings","attached_to_name":"Navbar Settings","attached_to_field":"app_logo","content_hash":"7ef08499d0407a553a0cc275ec77b63d","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-20T06:23:02.140Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 13:39:44,821 ERROR frappe New Exception collected in error log
+Site: heatcon
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Lead","name":"new-lead-mwccklrrib","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"CRM-LEAD-.YYYY.-","lead_owner":"Administrator","status":"Lead","request_type":"","type":"","no_of_employees":"1-10","country":"India","qualification_status":"Unqualified","company":"Techsolvo","language":"en","disabled":0,"unsubscribed":0,"blog_subscriber":0,"notes":[],"full_name":"sa"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}

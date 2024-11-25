@@ -1,0 +1,488 @@
+2024-11-18 10:48:46,606 DEBUG cd frappe-bench && python3 -m venv env
+2024-11-18 10:48:51,718 DEBUG cd frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2024-11-18 10:48:55,805 DEBUG cd frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet wheel
+2024-11-18 10:48:58,908 LOG Getting frappe
+2024-11-18 10:48:58,908 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git --branch version-15 --depth 1 --origin upstream
+2024-11-18 10:49:13,552 LOG Installing frappe
+2024-11-18 10:49:13,552 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/frappe 
+2024-11-18 10:50:44,198 DEBUG cd /home/ts/frappe_heatcon/frappe-bench/apps/frappe && yarn install --check-files
+2024-11-18 10:51:10,542 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe:
+2024-11-18 10:51:10,868 WARNING cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-11-18 10:51:10,868 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 10:51:10,868 DEBUG cd frappe-bench && bench build
+2024-11-18 10:51:11,098 INFO /home/ts/.local/bin/bench build
+2024-11-18 10:51:42,443 LOG setting up backups
+2024-11-18 10:51:42,473 LOG backups were set up
+2024-11-18 10:51:42,473 INFO Bench frappe-bench initialized
+2024-11-18 10:52:22,957 INFO /home/ts/.local/bin/bench new-site heatcon
+2024-11-18 10:54:20,867 INFO /home/ts/.local/bin/bench get-app payments
+2024-11-18 10:54:21,252 LOG Getting payments
+2024-11-18 10:54:21,253 DEBUG cd ./apps && git clone https://github.com/frappe/payments.git  --depth 1 --origin upstream
+2024-11-18 10:54:22,833 LOG Installing payments
+2024-11-18 10:54:22,834 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/payments 
+2024-11-18 10:54:36,478 DEBUG bench build --app payments
+2024-11-18 10:54:36,704 INFO /home/ts/.local/bin/bench build --app payments
+2024-11-18 10:55:58,080 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe:
+2024-11-18 10:55:58,390 WARNING cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-11-18 10:55:58,391 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 10:58:01,224 INFO /home/ts/.local/bin/bench get-app --branch version-15 erpnext
+2024-11-18 10:58:01,938 LOG Getting erpnext
+2024-11-18 10:58:01,939 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-15 --depth 1 --origin upstream
+2024-11-18 10:58:21,246 LOG Installing erpnext
+2024-11-18 10:58:21,246 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/erpnext 
+2024-11-18 10:58:37,100 DEBUG cd /home/ts/frappe_heatcon/frappe-bench/apps/erpnext && yarn install --check-files
+2024-11-18 10:58:37,935 DEBUG bench build --app erpnext
+2024-11-18 10:58:38,166 INFO /home/ts/.local/bin/bench build --app erpnext
+2024-11-18 10:58:45,192 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe:
+2024-11-18 10:58:45,494 WARNING cd /home/ts/frappe_heatcon/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-11-18 10:58:45,494 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 10:59:00,484 INFO /home/ts/.local/bin/bench --site heatcon install-app erpnext
+2024-11-18 11:04:33,494 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:04:33,831 INFO /home/ts/.local/bin/bench watch
+2024-11-18 11:04:33,833 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 11:04:33,835 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 11:04:33,893 INFO /home/ts/.local/bin/bench worker
+2024-11-18 11:11:02,625 INFO /home/ts/.local/bin/bench --site heatcon enable-scheduler
+2024-11-18 11:11:16,450 INFO /home/ts/.local/bin/bench --site heatcon set-maintenance-mode off
+2024-11-18 11:11:41,707 INFO /usr/local/bin/bench setup production ts
+2024-11-18 11:11:41,716 DEBUG bench setup role fail2ban
+2024-11-18 11:11:41,836 INFO /usr/local/bin/bench setup role fail2ban
+2024-11-18 11:12:05,990 WARNING /usr/local/bin/bench setup production ts executed with exit code 1
+2024-11-18 11:12:21,190 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:12:21,488 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 11:12:21,492 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 11:12:21,548 INFO /home/ts/.local/bin/bench watch
+2024-11-18 11:12:21,550 INFO /home/ts/.local/bin/bench worker
+2024-11-18 11:13:03,042 INFO /usr/local/bin/bench setup production TS
+2024-11-18 11:13:03,048 WARNING /usr/local/bin/bench setup production TS executed with exit code 1
+2024-11-18 11:18:29,524 INFO /home/ts/.local/bin/bench setup production ts
+2024-11-18 11:18:29,525 WARNING superuser privileges required for this command
+2024-11-18 11:18:46,265 INFO /usr/local/bin/bench setup production ts
+2024-11-18 11:18:46,270 LOG Updated supervisord.conf: 'chmod' changed from '0700                       ; sockef file mode (default 0700)' to '0760'
+2024-11-18 11:18:46,270 LOG Updated supervisord.conf: 'chown' changed from '' to 'ts:ts'
+2024-11-18 11:18:46,328 DEBUG sudo /usr/sbin/nginx -t
+2024-11-18 11:18:46,347 DEBUG sudo systemctl reload nginx
+2024-11-18 11:19:22,215 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:19:22,506 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 11:19:22,535 INFO /home/ts/.local/bin/bench worker
+2024-11-18 11:19:22,555 INFO /home/ts/.local/bin/bench watch
+2024-11-18 11:19:22,564 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 11:20:02,402 INFO /home/ts/.local/bin/bench setup nginx
+2024-11-18 11:22:31,827 INFO /usr/local/bin/bench setup production ts
+2024-11-18 11:22:31,834 LOG Updated supervisord.conf: 'chmod' changed from '0700                       ; sockef file mode (default 0700)' to '0760'
+2024-11-18 11:22:31,834 LOG Updated supervisord.conf: 'chown' changed from '' to 'ts:ts'
+2024-11-18 11:22:35,134 DEBUG /usr/local/bin/supervisorctl reread
+2024-11-18 11:22:35,305 DEBUG /usr/local/bin/supervisorctl update
+2024-11-18 11:22:35,509 DEBUG sudo /usr/sbin/nginx -t
+2024-11-18 11:22:35,531 DEBUG sudo systemctl reload nginx
+2024-11-18 11:22:35,660 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 11:22:35,676 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 11:22:35,701 INFO /usr/local/bin/bench schedule
+2024-11-18 11:23:30,985 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:25:28,050 INFO /home/ts/.local/bin/bench use heatcon
+2024-11-18 11:28:43,425 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 11:30:22,992 INFO /usr/local/bin/bench setup nginx
+2024-11-18 11:32:20,232 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 11:32:20,236 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 11:32:20,298 INFO /usr/local/bin/bench schedule
+2024-11-18 11:37:15,435 INFO /home/ts/.local/bin/bench --site [site-name] disable-scheduler
+2024-11-18 11:37:22,481 INFO /home/ts/.local/bin/bench --site heatcon disable-scheduler
+2024-11-18 11:37:36,457 INFO /home/ts/.local/bin/bench --site heatcon set-maintenance-mode on
+2024-11-18 11:37:59,194 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:38:08,234 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:38:08,571 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 11:38:08,573 INFO /home/ts/.local/bin/bench watch
+2024-11-18 11:38:08,585 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 11:38:08,585 INFO /home/ts/.local/bin/bench worker
+2024-11-18 11:40:17,056 INFO /home/ts/.local/bin/bench --site heatcon set-maintenance-mode off
+2024-11-18 11:41:32,396 INFO /home/ts/.local/bin/bench start
+2024-11-18 11:41:32,953 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 11:41:32,998 INFO /home/ts/.local/bin/bench watch
+2024-11-18 11:41:33,009 INFO /home/ts/.local/bin/bench worker
+2024-11-18 11:41:33,013 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 11:42:29,292 INFO /home/ts/.local/bin/bench build
+2024-11-18 11:52:59,587 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:00:01,890 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-18 12:12:55,995 INFO /home/ts/.local/bin/bench --site heatcon.local restore /home/ts/Downloads/20241116_180004-hrsystem-database.sql
+2024-11-18 12:13:05,692 INFO /home/ts/.local/bin/bench --site heatcon restore /home/ts/Downloads/20241116_180004-hrsystem-database.sql
+2024-11-18 12:30:59,923 INFO /home/ts/.local/bin/bench --site heatcon restore 20241116_180004-hrsystem-database.sql
+2024-11-18 12:32:00,069 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:37:02,245 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:37:56,035 INFO /home/ts/.local/bin/bench start
+2024-11-18 12:37:56,485 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 12:37:56,498 INFO /home/ts/.local/bin/bench watch
+2024-11-18 12:37:56,508 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 12:37:56,518 INFO /home/ts/.local/bin/bench worker
+2024-11-18 12:39:47,373 INFO /home/ts/.local/bin/bench start
+2024-11-18 12:39:47,702 INFO /home/ts/.local/bin/bench worker
+2024-11-18 12:39:47,732 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 12:39:47,750 INFO /home/ts/.local/bin/bench watch
+2024-11-18 12:39:47,760 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 12:40:48,112 INFO /home/ts/.local/bin/bench reinstall
+2024-11-18 12:50:04,317 INFO /home/ts/.local/bin/bench --site heatcon --force restore /home/ts/Downloads/20241116_180004-hrsystem-database.sql.gz
+2024-11-18 12:51:03,082 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:54:28,579 INFO /home/ts/.local/bin/bench --site heatcon --force restore /home/ts/Downloads/20241106_113757-hrsystem-database.sql
+2024-11-18 12:56:17,085 INFO /home/ts/.local/bin/bench start
+2024-11-18 12:56:17,494 INFO /home/ts/.local/bin/bench worker
+2024-11-18 12:56:17,496 INFO /home/ts/.local/bin/bench watch
+2024-11-18 12:56:17,496 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 12:56:17,556 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 12:56:45,359 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:57:44,268 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 12:58:07,452 INFO /home/ts/.local/bin/bench get-app hrms
+2024-11-18 12:58:08,174 LOG Getting hrms
+2024-11-18 12:58:08,175 DEBUG cd ./apps && git clone https://github.com/frappe/hrms.git  --depth 1 --origin upstream
+2024-11-18 12:58:11,455 LOG Installing hrms
+2024-11-18 12:58:11,456 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/hrms 
+2024-11-18 12:58:14,055 DEBUG cd /home/ts/frappe_heatcon/frappe-bench/apps/hrms && yarn install --check-files
+2024-11-18 13:00:34,776 DEBUG bench build --app hrms
+2024-11-18 13:00:34,912 INFO /home/ts/.local/bin/bench build --app hrms
+2024-11-18 13:02:55,646 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 13:02:56,858 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 13:02:57,244 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 13:02:57,244 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 13:02:57,247 INFO /usr/local/bin/bench schedule
+2024-11-18 13:03:19,742 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:04:49,604 INFO /home/ts/.local/bin/bench get-app https://github.com/SatyamTechsolvo/IMAPI.git
+2024-11-18 13:04:49,613 LOG Getting IMAPI
+2024-11-18 13:04:49,613 DEBUG cd ./apps && git clone https://github.com/SatyamTechsolvo/IMAPI.git  --depth 1 --origin upstream
+2024-11-18 13:04:50,925 LOG Installing indiamart_connect
+2024-11-18 13:04:50,925 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/indiamart_connect 
+2024-11-18 13:04:52,883 DEBUG bench build --app indiamart_connect
+2024-11-18 13:04:53,007 INFO /home/ts/.local/bin/bench build --app indiamart_connect
+2024-11-18 13:04:55,714 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 13:04:58,935 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-18 13:04:58,935 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-18 13:04:58,935 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 13:04:59,501 INFO /usr/local/bin/bench schedule
+2024-11-18 13:04:59,512 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 13:04:59,513 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 13:05:03,400 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:05:37,520 INFO /home/ts/.local/bin/bench get-app https://github.com/shridarpatil/frappe_whatsapp.git
+2024-11-18 13:05:37,528 LOG Getting frappe_whatsapp
+2024-11-18 13:05:37,528 DEBUG cd ./apps && git clone https://github.com/shridarpatil/frappe_whatsapp.git  --depth 1 --origin upstream
+2024-11-18 13:05:38,765 LOG Installing frappe_whatsapp
+2024-11-18 13:05:38,765 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/frappe_whatsapp 
+2024-11-18 13:05:40,967 DEBUG bench build --app frappe_whatsapp
+2024-11-18 13:05:41,098 INFO /home/ts/.local/bin/bench build --app frappe_whatsapp
+2024-11-18 13:05:43,076 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 13:05:44,952 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-18 13:05:44,952 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-18 13:05:44,952 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 13:05:46,048 INFO /usr/local/bin/bench schedule
+2024-11-18 13:05:46,059 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 13:05:46,061 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 13:05:54,865 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:06:53,877 INFO /home/ts/.local/bin/bench get-app https://github.com/Ahmed-Mansy-Mansico/mansico_meta_integration.git
+2024-11-18 13:06:53,885 LOG Getting mansico_meta_integration
+2024-11-18 13:06:53,885 DEBUG cd ./apps && git clone https://github.com/Ahmed-Mansy-Mansico/mansico_meta_integration.git  --depth 1 --origin upstream
+2024-11-18 13:06:55,195 LOG Installing mansico_meta_integration
+2024-11-18 13:06:55,196 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/mansico_meta_integration 
+2024-11-18 13:06:57,198 DEBUG bench build --app mansico_meta_integration
+2024-11-18 13:06:57,321 INFO /home/ts/.local/bin/bench build --app mansico_meta_integration
+2024-11-18 13:06:59,216 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 13:07:05,882 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-18 13:07:05,882 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-18 13:07:05,883 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 13:07:06,442 INFO /usr/local/bin/bench schedule
+2024-11-18 13:07:06,454 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 13:07:06,454 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 13:07:10,253 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:07:41,164 INFO /home/ts/.local/bin/bench get-app https://github.com/SatyamTechsolvo/WooCommerce-Mod.git
+2024-11-18 13:07:41,171 LOG Getting WooCommerce-Mod
+2024-11-18 13:07:41,171 DEBUG cd ./apps && git clone https://github.com/SatyamTechsolvo/WooCommerce-Mod.git  --depth 1 --origin upstream
+2024-11-18 13:07:42,403 LOG Installing woocommerceconnector
+2024-11-18 13:07:42,403 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/woocommerceconnector 
+2024-11-18 13:07:45,070 DEBUG bench build --app woocommerceconnector
+2024-11-18 13:07:45,193 INFO /home/ts/.local/bin/bench build --app woocommerceconnector
+2024-11-18 13:07:47,095 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 13:07:52,747 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-18 13:07:52,747 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-18 13:07:52,747 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 13:07:53,828 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 13:07:53,838 INFO /usr/local/bin/bench schedule
+2024-11-18 13:07:53,838 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 13:07:58,666 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:10:08,741 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:10:48,240 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:16:12,794 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:20:02,720 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 13:22:05,773 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:22:06,245 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:22:06,246 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:22:06,282 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:22:06,296 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:22:13,676 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:22:13,972 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:22:13,973 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:22:13,979 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:22:14,039 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:22:36,335 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:22:36,631 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:22:36,643 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:22:36,649 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:22:36,681 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:23:23,436 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:23:23,729 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:23:23,729 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:23:23,734 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:23:23,798 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:24:42,796 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:24:43,112 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:24:43,112 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:24:43,147 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:24:43,157 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:25:23,971 INFO /home/ts/.local/bin/bench start 8080
+2024-11-18 13:25:23,978 WARNING /home/ts/.local/bin/bench start 8080 executed with exit code 2
+2024-11-18 13:25:28,619 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:25:28,920 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 13:25:28,926 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:25:28,974 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:25:28,978 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:26:58,009 INFO /home/ts/.local/bin/bench start
+2024-11-18 13:26:58,318 INFO /home/ts/.local/bin/bench worker
+2024-11-18 13:26:58,330 INFO /home/ts/.local/bin/bench watch
+2024-11-18 13:26:58,363 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 13:26:58,367 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:06:30,799 INFO /home/ts/.local/bin/bench get-app --branch version-15 https://github.com/resilient-tech/india-compliance.git
+2024-11-18 16:06:30,818 LOG Getting india-compliance
+2024-11-18 16:06:30,818 DEBUG cd ./apps && git clone https://github.com/resilient-tech/india-compliance.git --branch version-15 --depth 1 --origin upstream
+2024-11-18 16:06:34,866 LOG Installing india_compliance
+2024-11-18 16:06:34,866 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/ts/frappe_heatcon/frappe-bench/apps/india_compliance 
+2024-11-18 16:06:39,062 DEBUG bench build --app india_compliance
+2024-11-18 16:06:39,184 INFO /home/ts/.local/bin/bench build --app india_compliance
+2024-11-18 16:06:48,454 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-18 16:06:54,041 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-18 16:06:54,041 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-18 16:06:54,041 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-18 16:06:57,160 INFO /usr/local/bin/bench schedule
+2024-11-18 16:06:57,166 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-18 16:06:57,169 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:08:02,923 INFO /home/ts/.local/bin/bench --site heatcon install-app india_compliance/
+2024-11-18 16:08:07,899 INFO /home/ts/.local/bin/bench --site heatcon install-app india_compliance
+2024-11-18 16:08:40,325 INFO /home/ts/.local/bin/bench list-apps
+2024-11-18 16:08:55,641 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-18 16:10:58,886 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:10:59,267 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:10:59,290 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:10:59,297 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:10:59,304 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:11:22,959 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:11:28,549 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:11:34,114 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:11:39,712 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:11:45,262 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-18 16:11:45,803 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:11:46,102 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:11:46,104 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:11:46,114 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:11:46,164 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:12:21,191 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:12:21,513 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:12:21,514 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:12:21,532 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:12:21,546 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:12:52,288 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:12:52,599 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:12:52,599 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:12:52,637 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:12:52,650 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:13:01,954 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:13:02,248 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:13:02,261 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:13:02,276 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:13:02,311 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:14:38,989 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:14:39,290 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:14:39,293 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:14:39,346 INFO /home/ts/.local/bin/bench serve --port 8000
+2024-11-18 16:14:39,353 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:15:26,130 INFO /home/ts/.local/bin/bench setup procfile
+2024-11-18 16:15:37,878 INFO /home/ts/.local/bin/bench start
+2024-11-18 16:15:38,183 INFO /home/ts/.local/bin/bench watch
+2024-11-18 16:15:38,186 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-18 16:15:38,192 INFO /home/ts/.local/bin/bench schedule
+2024-11-18 16:15:38,241 INFO /home/ts/.local/bin/bench worker
+2024-11-18 16:20:30,046 INFO /home/ts/.local/bin/bench build
+2024-11-18 18:00:02,459 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-19 10:16:27,439 INFO /usr/local/bin/bench schedule
+2024-11-19 10:16:27,439 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-19 10:16:27,439 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-19 10:23:41,647 INFO /home/ts/.local/bin/bench start
+2024-11-19 10:24:58,398 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-19 10:24:58,406 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-19 10:25:10,988 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-19 10:25:11,003 INFO /usr/local/bin/bench schedule
+2024-11-19 10:25:11,005 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-19 10:25:14,193 INFO /home/ts/.local/bin/bench start
+2024-11-19 10:27:38,226 INFO /home/ts/.local/bin/bench start
+2024-11-19 10:27:38,773 INFO /home/ts/.local/bin/bench schedule
+2024-11-19 10:27:38,776 INFO /home/ts/.local/bin/bench worker
+2024-11-19 10:27:38,777 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-19 10:27:38,825 INFO /home/ts/.local/bin/bench watch
+2024-11-19 12:00:02,191 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-19 18:00:02,448 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-20 10:06:52,728 INFO /usr/local/bin/bench schedule
+2024-11-20 10:06:52,728 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-20 10:06:52,728 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-20 10:17:05,423 INFO /home/ts/.local/bin/bench start
+2024-11-20 10:18:43,621 INFO /home/ts/.local/bin/bench start
+2024-11-20 10:18:44,153 INFO /home/ts/.local/bin/bench watch
+2024-11-20 10:18:44,166 INFO /home/ts/.local/bin/bench worker
+2024-11-20 10:18:44,172 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-20 10:18:44,221 INFO /home/ts/.local/bin/bench schedule
+2024-11-20 11:11:42,339 INFO /home/ts/.local/bin/bench set-config -g developer_mode 1
+2024-11-20 11:12:18,987 INFO /home/ts/.local/bin/bench --site heatcon clear-cache
+2024-11-20 11:12:26,801 INFO /home/ts/.local/bin/bench setup requirements --dev
+2024-11-20 11:12:27,960 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade coverage~=6.5.0 Faker~=18.10.1 pyngrok~=6.0.0 unittest-xml-reporting~=3.2.0 watchdog~=3.0.0 hypothesis~=6.77.0 responses==0.23.1 freezegun~=1.2.2 
+2024-11-20 11:12:37,167 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip install --quiet --upgrade parameterized~=0.8.1 time-machine~=2.10.0 
+2024-11-20 11:39:42,113 INFO /home/ts/.local/bin/bench start
+2024-11-20 11:39:42,490 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-20 11:39:42,493 INFO /home/ts/.local/bin/bench worker
+2024-11-20 11:39:42,493 INFO /home/ts/.local/bin/bench watch
+2024-11-20 11:39:42,552 INFO /home/ts/.local/bin/bench schedule
+2024-11-20 11:42:40,559 INFO /home/ts/.local/bin/bench build
+2024-11-20 12:00:01,727 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-20 13:07:27,876 INFO /home/ts/.local/bin/bench --site heatcon set-admin-password 1234
+2024-11-20 14:48:46,534 INFO /home/ts/.local/bin/bench start
+2024-11-20 14:48:47,220 INFO /home/ts/.local/bin/bench watch
+2024-11-20 14:48:47,220 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-20 14:48:47,280 INFO /home/ts/.local/bin/bench worker
+2024-11-20 14:48:47,285 INFO /home/ts/.local/bin/bench schedule
+2024-11-20 18:00:01,852 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-21 10:07:49,067 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-21 10:07:49,067 INFO /usr/local/bin/bench schedule
+2024-11-21 10:07:49,067 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-21 10:11:35,212 INFO /home/ts/.local/bin/bench start
+2024-11-21 10:13:09,702 INFO /usr/local/bin/bench schedule
+2024-11-21 10:13:09,722 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-21 10:13:09,810 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-21 10:13:10,740 INFO /home/ts/.local/bin/bench start
+2024-11-21 10:13:42,275 INFO /home/ts/.local/bin/bench start
+2024-11-21 10:13:42,783 INFO /home/ts/.local/bin/bench worker
+2024-11-21 10:13:42,789 INFO /home/ts/.local/bin/bench schedule
+2024-11-21 10:13:42,806 INFO /home/ts/.local/bin/bench watch
+2024-11-21 10:13:42,881 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-21 10:46:39,851 INFO /home/ts/.local/bin/bench --site heatcon export-fixtures
+2024-11-21 12:00:01,480 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-21 13:04:57,756 INFO /home/ts/.local/bin/bench set-config -g server_script_enabled 1
+2024-11-21 17:21:51,237 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-21 17:35:09,001 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-21 18:00:01,903 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-22 10:05:28,367 INFO /usr/local/bin/bench schedule
+2024-11-22 10:05:28,367 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-22 10:05:28,367 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-22 10:08:19,853 INFO /home/ts/.local/bin/bench start
+2024-11-22 10:09:38,559 INFO /home/ts/.local/bin/bench startr
+2024-11-22 10:09:41,826 INFO /home/ts/.local/bin/bench start
+2024-11-22 10:09:42,355 INFO /home/ts/.local/bin/bench watch
+2024-11-22 10:09:42,374 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-22 10:09:42,446 INFO /home/ts/.local/bin/bench schedule
+2024-11-22 10:09:42,451 INFO /home/ts/.local/bin/bench worker
+2024-11-22 10:49:31,542 INFO /home/ts/.local/bin/bench doctor
+2024-11-22 10:49:47,200 INFO /home/ts/.local/bin/bench set-config worker_processes 4
+2024-11-22 10:49:56,528 INFO /home/ts/.local/bin/bench start
+2024-11-22 10:49:57,170 INFO /home/ts/.local/bin/bench watch
+2024-11-22 10:49:57,170 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-22 10:49:57,197 INFO /home/ts/.local/bin/bench worker
+2024-11-22 10:49:57,216 INFO /home/ts/.local/bin/bench schedule
+2024-11-22 11:58:56,238 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-22 12:00:01,525 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-22 15:50:03,944 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-22 15:58:21,000 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-22 16:06:20,203 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-22 18:00:01,853 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-22 18:30:32,621 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:30:40,437 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:31:05,693 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:31:07,880 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:31:59,993 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:33:42,233 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:33:50,204 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:34:41,016 INFO /home/ts/.local/bin/bench start
+2024-11-22 18:34:41,304 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-22 18:34:41,326 INFO /home/ts/.local/bin/bench watch
+2024-11-22 18:34:41,338 INFO /home/ts/.local/bin/bench worker
+2024-11-22 18:34:41,346 INFO /home/ts/.local/bin/bench schedule
+2024-11-23 10:04:56,431 INFO /usr/local/bin/bench schedule
+2024-11-23 10:04:56,431 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-23 10:04:56,431 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-23 10:13:20,185 INFO /home/ts/.local/bin/bench start
+2024-11-23 10:13:47,502 INFO /home/ts/.local/bin/bench start
+2024-11-23 10:13:48,024 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-23 10:13:48,033 INFO /home/ts/.local/bin/bench worker
+2024-11-23 10:13:48,057 INFO /home/ts/.local/bin/bench schedule
+2024-11-23 10:13:48,091 INFO /home/ts/.local/bin/bench watch
+2024-11-23 10:30:16,203 INFO /home/ts/.local/bin/bench start
+2024-11-23 10:30:16,843 INFO /home/ts/.local/bin/bench schedule
+2024-11-23 10:30:16,878 INFO /home/ts/.local/bin/bench watch
+2024-11-23 10:30:16,885 INFO /home/ts/.local/bin/bench worker
+2024-11-23 10:30:16,887 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-23 10:43:43,211 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-23 10:51:32,141 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-23 10:57:24,739 INFO /home/ts/.local/bin/bench --site heatcon clear-cache
+2024-11-23 11:32:38,748 INFO /home/ts/.local/bin/bench start
+2024-11-23 11:32:39,052 INFO /home/ts/.local/bin/bench schedule
+2024-11-23 11:32:39,054 INFO /home/ts/.local/bin/bench watch
+2024-11-23 11:32:39,106 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-23 11:32:39,113 INFO /home/ts/.local/bin/bench worker
+2024-11-23 12:00:02,509 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-23 15:17:12,118 INFO /home/ts/.local/bin/bench console
+2024-11-23 15:19:57,677 INFO /home/ts/.local/bin/bench start
+2024-11-23 15:19:58,242 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-23 15:19:58,243 INFO /home/ts/.local/bin/bench schedule
+2024-11-23 15:19:58,244 INFO /home/ts/.local/bin/bench worker
+2024-11-23 15:19:58,276 INFO /home/ts/.local/bin/bench watch
+2024-11-23 18:00:01,861 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-25 10:11:23,347 INFO /usr/local/bin/bench worker --queue short,default
+2024-11-25 10:11:23,348 INFO /usr/local/bin/bench schedule
+2024-11-25 10:11:23,348 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-11-25 10:13:34,704 INFO /home/ts/.local/bin/bench start
+2024-11-25 10:14:08,844 INFO /home/ts/.local/bin/bench star
+2024-11-25 10:14:13,972 INFO /home/ts/.local/bin/bench start
+2024-11-25 10:14:14,496 INFO /home/ts/.local/bin/bench worker
+2024-11-25 10:14:14,500 INFO /home/ts/.local/bin/bench watch
+2024-11-25 10:14:14,514 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 10:14:14,539 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-25 10:51:45,140 INFO /home/ts/.local/bin/bench setup supervisor
+2024-11-25 10:51:45,465 LOG Updated supervisord.conf: 'chmod' changed from '0700                       ; sockef file mode (default 0700)' to '0760'
+2024-11-25 10:51:45,465 LOG Updated supervisord.conf: 'chown' changed from '' to 'ts:ts'
+2024-11-25 10:52:08,088 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 10:52:08,092 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 10:52:08,101 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 10:52:08,167 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 10:52:08,180 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 10:52:08,315 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 10:52:08,322 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 10:52:08,352 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 10:52:08,396 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 10:52:15,265 INFO /home/ts/.local/bin/bench restart
+2024-11-25 10:52:15,946 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 10:52:18,754 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 10:52:18,755 WARNING /home/ts/.local/bin/bench restart executed with exit code 1
+2024-11-25 10:52:36,940 INFO /home/ts/.local/bin/bench start
+2024-11-25 10:52:37,497 INFO /home/ts/.local/bin/bench worker
+2024-11-25 10:52:37,511 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 10:52:37,533 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-25 10:52:37,534 INFO /home/ts/.local/bin/bench watch
+2024-11-25 10:53:16,120 INFO /home/ts/.local/bin/bench start
+2024-11-25 10:53:16,656 INFO /home/ts/.local/bin/bench watch
+2024-11-25 10:53:16,675 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 10:53:16,740 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-25 10:53:16,766 INFO /home/ts/.local/bin/bench worker
+2024-11-25 10:55:26,996 INFO /home/ts/.local/bin/bench restart
+2024-11-25 10:55:27,690 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 10:55:29,718 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 10:55:29,719 WARNING /home/ts/.local/bin/bench restart executed with exit code 1
+2024-11-25 11:16:57,034 INFO /home/ts/.local/bin/bench start
+2024-11-25 11:17:24,112 INFO /home/ts/.local/bin/bench start
+2024-11-25 11:17:40,321 INFO /home/ts/.local/bin/bench start
+2024-11-25 11:18:20,328 INFO /home/ts/.local/bin/bench start
+2024-11-25 11:18:20,665 INFO /home/ts/.local/bin/bench watch
+2024-11-25 11:18:20,666 INFO /home/ts/.local/bin/bench serve --port 8002
+2024-11-25 11:18:20,706 INFO /home/ts/.local/bin/bench worker
+2024-11-25 11:18:20,717 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 12:00:01,741 INFO /home/ts/.local/bin/bench --verbose --site all backup
+2024-11-25 14:48:26,538 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-25 14:53:08,866 INFO /home/ts/.local/bin/bench --site heatcon export-fixtures
+2024-11-25 14:54:47,229 INFO /home/ts/.local/bin/bench backup-all-sites

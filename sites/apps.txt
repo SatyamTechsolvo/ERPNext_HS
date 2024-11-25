@@ -1,0 +1,9 @@
+frappe
+mansico_meta_integration
+hrms
+indiamart_connect
+payments
+india_compliance
+frappe_whatsapp
+erpnext
+woocommerceconnector

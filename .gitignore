@@ -1,0 +1,4 @@
+env/
+sites/*/private/
+sites/*/public/files/
+sites/assets/

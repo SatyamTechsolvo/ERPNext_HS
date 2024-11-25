@@ -1,0 +1,78 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241118_120002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-18 12:00:04.206272
+Config  : ./heatcon/private/backups/20241118_120002-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241118_120002-heatcon-database.sql.gz         1.1MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241118_180004-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-18 18:00:15.685749
+Config  : ./heatcon/private/backups/20241118_180004-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241118_180004-heatcon-database.sql.gz         1.7MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241119_120003-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-19 12:00:07.302452
+Config  : ./heatcon/private/backups/20241119_120003-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241119_120003-heatcon-database.sql.gz         1.7MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241119_180004-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-19 18:00:26.477799
+Config  : ./heatcon/private/backups/20241119_180004-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241119_180004-heatcon-database.sql.gz         1.7MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241120_120003-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-20 12:00:11.098113
+Config  : ./heatcon/private/backups/20241120_120003-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241120_120003-heatcon-database.sql.gz         1.7MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241120_180002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-20 18:00:06.511463
+Config  : ./heatcon/private/backups/20241120_180002-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241120_180002-heatcon-database.sql.gz         1.8MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241121_120002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-21 12:00:05.716707
+Config  : ./heatcon/private/backups/20241121_120002-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241121_120002-heatcon-database.sql.gz         2.3MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241121_180002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-21 18:00:07.902574
+Config  : ./heatcon/private/backups/20241121_180002-heatcon-site_config_backup.json 154.0B
+Database: ./heatcon/private/backups/20241121_180002-heatcon-database.sql.gz         2.5MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241122_120002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-22 12:00:09.250908
+Config  : ./heatcon/private/backups/20241122_120002-heatcon-site_config_backup.json 180.0B
+Database: ./heatcon/private/backups/20241122_120002-heatcon-database.sql.gz         2.6MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241122_180003-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-22 18:00:07.886703
+Config  : ./heatcon/private/backups/20241122_180003-heatcon-site_config_backup.json 180.0B
+Database: ./heatcon/private/backups/20241122_180003-heatcon-database.sql.gz         2.9MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241123_120003-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-23 12:00:10.335994
+Config  : ./heatcon/private/backups/20241123_120003-heatcon-site_config_backup.json 180.0B
+Database: ./heatcon/private/backups/20241123_120003-heatcon-database.sql.gz         3.1MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241123_180002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-23 18:00:09.423408
+Config  : ./heatcon/private/backups/20241123_180002-heatcon-site_config_backup.json 180.0B
+Database: ./heatcon/private/backups/20241123_180002-heatcon-database.sql.gz         3.4MiB
+Backup for Site heatcon has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_f2105caccdc715ce --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _f2105caccdc715ce | /usr/bin/gzip >> ./heatcon/private/backups/20241125_120002-heatcon-database.sql.gz
+
+Backup Summary for heatcon at 2024-11-25 12:00:08.670631
+Config  : ./heatcon/private/backups/20241125_120002-heatcon-site_config_backup.json 180.0B
+Database: ./heatcon/private/backups/20241125_120002-heatcon-database.sql.gz         3.8MiB
+Backup for Site heatcon has been successfully completed
