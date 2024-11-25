@@ -38,46 +38,6 @@
         "idx": 4,
         "version": "16.0.0-dev"
     },
-    "indiamart_connect": {
-        "is_repo": true,
-        "resolution": {
-            "commit_hash": "b4cd05b7de0d0f38c831447b35977989da518c2f",
-            "branch": "master"
-        },
-        "required": [],
-        "idx": 5,
-        "version": "0.0.1"
-    },
-    "frappe_whatsapp": {
-        "is_repo": true,
-        "resolution": {
-            "commit_hash": "78b3d7dc51d8951392b3112a9a4b95772dceb609",
-            "branch": "master"
-        },
-        "required": [],
-        "idx": 6,
-        "version": "1.0.7"
-    },
-    "mansico_meta_integration": {
-        "is_repo": true,
-        "resolution": {
-            "commit_hash": "6e5df3c4fa3169f40d4dec40b19ac60106d7fb45",
-            "branch": "master"
-        },
-        "required": [],
-        "idx": 7,
-        "version": "0.0.1"
-    },
-    "woocommerceconnector": {
-        "is_repo": true,
-        "resolution": {
-            "commit_hash": "bcdf07206c5fb1592cc3723432eedf60af55c779",
-            "branch": "master"
-        },
-        "required": [],
-        "idx": 8,
-        "version": "1.7.0"
-    },
     "india_compliance": {
         "is_repo": true,
         "resolution": {

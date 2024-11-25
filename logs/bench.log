@@ -486,3 +486,86 @@
 2024-11-25 14:48:26,538 INFO /home/ts/.local/bin/bench --site heatcon migrate
 2024-11-25 14:53:08,866 INFO /home/ts/.local/bin/bench --site heatcon export-fixtures
 2024-11-25 14:54:47,229 INFO /home/ts/.local/bin/bench backup-all-sites
+2024-11-25 15:20:19,186 INFO /home/ts/.local/bin/bench --site heatcon uninstall-app woocommerceconnector
+2024-11-25 15:20:46,374 INFO /home/ts/.local/bin/bench --site heatcon uninstall-app frappe_whatsapp
+2024-11-25 15:21:25,466 INFO /home/ts/.local/bin/bench --site uninstall-app mansico_meta_integration
+2024-11-25 15:21:34,861 INFO /home/ts/.local/bin/bench --site heatcon uninstall-app mansico_meta_integration
+2024-11-25 15:22:54,812 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:23:23,281 INFO /home/ts/.local/bin/bench --site heatcon uninstall-app indiamart_connect
+2024-11-25 15:23:59,089 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:24:15,855 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-25 15:27:04,227 INFO /home/ts/.local/bin/bench --site remove-app woocommerceconnector frappe_whatsapp indiamart_connect mansico_meta_integration
+2024-11-25 15:27:42,633 INFO /home/ts/.local/bin/bench remove-app woocommerceconnector frappe_whatsapp indiamart_connect mansico_meta_integration
+2024-11-25 15:27:42,641 WARNING /home/ts/.local/bin/bench remove-app woocommerceconnector frappe_whatsapp indiamart_connect mansico_meta_integration executed with exit code 2
+2024-11-25 15:27:54,808 INFO /home/ts/.local/bin/bench remove-app woocommerceconnector
+2024-11-25 15:27:54,941 INFO /home/ts/.local/bin/bench --site all list-apps --format json
+2024-11-25 15:27:55,572 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:27:56,087 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip uninstall -y woocommerceconnector
+2024-11-25 15:27:56,907 INFO App moved from apps/woocommerceconnector to archived/apps/woocommerceconnector-2024-11-25
+2024-11-25 15:28:02,515 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 15:28:04,659 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 15:28:04,660 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-25 15:28:04,660 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-25 15:28:05,085 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:05,124 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:05,128 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 15:28:05,145 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:05,183 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:05,189 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:05,244 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:05,254 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:05,302 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:24,994 INFO /home/ts/.local/bin/bench remove-app frappe_whatsapp
+2024-11-25 15:28:25,138 INFO /home/ts/.local/bin/bench --site all list-apps --format json
+2024-11-25 15:28:25,784 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:28:26,286 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip uninstall -y frappe_whatsapp
+2024-11-25 15:28:26,916 INFO App moved from apps/frappe_whatsapp to archived/apps/frappe_whatsapp-2024-11-25
+2024-11-25 15:28:27,286 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 15:28:31,929 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 15:28:31,929 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-25 15:28:31,929 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-25 15:28:33,129 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:33,141 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:33,143 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:33,168 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:33,180 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:33,197 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:33,213 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 15:28:33,238 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:28:33,351 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:28:49,178 INFO /home/ts/.local/bin/bench remove-app mansico_meta_integration
+2024-11-25 15:28:49,315 INFO /home/ts/.local/bin/bench --site all list-apps --format json
+2024-11-25 15:28:49,946 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:28:50,446 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip uninstall -y mansico_meta_integration
+2024-11-25 15:28:51,125 INFO App moved from apps/mansico_meta_integration to archived/apps/mansico_meta_integration-2024-11-25
+2024-11-25 15:28:51,487 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 15:28:59,068 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 15:28:59,068 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-25 15:28:59,068 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-25 15:29:00,255 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:00,255 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 15:29:00,283 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:00,294 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:00,317 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:00,333 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:00,355 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:00,362 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:00,371 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:12,252 INFO /home/ts/.local/bin/bench remove-app indiamart_connect
+2024-11-25 15:29:12,387 INFO /home/ts/.local/bin/bench --site all list-apps --format json
+2024-11-25 15:29:13,029 INFO /home/ts/.local/bin/bench --site heatcon list-apps
+2024-11-25 15:29:13,526 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && /home/ts/frappe_heatcon/frappe-bench/env/bin/python -m pip uninstall -y indiamart_connect
+2024-11-25 15:29:14,167 INFO App moved from apps/indiamart_connect to archived/apps/indiamart_connect-2024-11-25
+2024-11-25 15:29:14,526 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-11-25 15:29:19,384 WARNING cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-web: executed with exit code 7
+2024-11-25 15:29:19,384 WARNING restarting supervisor group `frappe-bench-web:` failed. Use `bench restart` to retry.
+2024-11-25 15:29:19,385 DEBUG cd /home/ts/frappe_heatcon/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-11-25 15:29:20,624 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:20,634 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:20,636 INFO /home/ts/.local/bin/bench schedule
+2024-11-25 15:29:20,639 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:20,671 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:29:20,698 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:20,714 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:20,716 INFO /home/ts/.local/bin/bench worker --queue long,default,short
+2024-11-25 15:29:20,833 INFO /home/ts/.local/bin/bench worker --queue short,default
