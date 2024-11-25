@@ -1,0 +1,10 @@
+{
+ "db_name": "_f2105caccdc715ce",
+ "db_password": "CJCtN5FM3ae6Iou8",
+ "db_type": "mariadb",
+ "domains": [
+  "192.168.0.177"
+ ],
+ "maintenance_mode": 0,
+ "worker_processes": "4"
+}

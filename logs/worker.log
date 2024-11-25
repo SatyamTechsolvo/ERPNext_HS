@@ -2888,3 +2888,10 @@ ModuleNotFoundError: No module named 'hrms'
 2024-11-25 15:29:21,664 Worker rq:worker:877b8ff1961840e39367307199b33e8f started with PID 34784, version 1.15.1
 2024-11-25 15:29:21,664 Subscribing to channel rq:pubsub:877b8ff1961840e39367307199b33e8f
 2024-11-25 15:29:21,664 *** Listening on home-ts-frappe_heatcon-frappe-bench:short, home-ts-frappe_heatcon-frappe-bench:default...
+2024-11-25 15:36:04,246 home-ts-frappe_heatcon-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.search.website_search.build_index_for_all_routes', kwargs={}, method=<function build_index_for_all_routes at 0x75b11886f740>, site='heatcon', user='Administrator') (heatcon::6daca016-0b60-4a8f-b8ce-337709203e85)
+Retrieving Routes                   : [=                                       ] 2%
+2024-11-25 15:36:19,237 home-ts-frappe_heatcon-frappe-bench:long: Job OK (heatcon::6daca016-0b60-4a8f-b8ce-337709203e85)
+2024-11-25 15:36:19,238 Result is kept for 600 seconds
+2024-11-25 15:42:51,719 Cleaning registries for queue: home-ts-frappe_heatcon-frappe-bench:short
+2024-11-25 15:42:51,719 Cleaning registries for queue: home-ts-frappe_heatcon-frappe-bench:long
+2024-11-25 15:42:51,719 Cleaning registries for queue: home-ts-frappe_heatcon-frappe-bench:default

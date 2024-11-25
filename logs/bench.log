@@ -569,3 +569,5 @@
 2024-11-25 15:29:20,714 INFO /home/ts/.local/bin/bench worker --queue long,default,short
 2024-11-25 15:29:20,716 INFO /home/ts/.local/bin/bench worker --queue long,default,short
 2024-11-25 15:29:20,833 INFO /home/ts/.local/bin/bench worker --queue short,default
+2024-11-25 15:35:56,509 INFO /home/ts/.local/bin/bench --site heatcon migrate
+2024-11-25 15:38:39,163 INFO /home/ts/.local/bin/bench --site heatcon backup
